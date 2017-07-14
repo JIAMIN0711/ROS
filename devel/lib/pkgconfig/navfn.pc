@@ -1,0 +1,8 @@
+prefix=/home/lianchuang/catkin_ws/devel
+
+Name: navfn
+Description: Description of navfn
+Version: 1.14.0
+Cflags: -I/home/lianchuang/catkin_ws/devel/include -I/home/lianchuang/catkin_ws/src/navigation-kinetic-devel/navfn/include
+Libs: -L/home/lianchuang/catkin_ws/devel/lib -lnavfn
+Requires: nav_core roscpp pluginlib

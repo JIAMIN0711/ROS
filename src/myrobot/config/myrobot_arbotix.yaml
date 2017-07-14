@@ -1,0 +1,9 @@
+rate: 20
+sync_write: True
+sync_read: True
+read_rate: 20
+write_rate: 20
+
+controllers: {
+  base_controller: {type: diff_controller, base_frame_id: base_link, base_width: 0.4, ticks_meter: 4100, kp: 12, kd: 12, ki: 0, ko: 50, accel_limit: 1.0}
+}

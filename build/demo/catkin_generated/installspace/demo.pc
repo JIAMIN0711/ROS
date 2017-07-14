@@ -1,0 +1,8 @@
+prefix=/home/lianchuang/catkin_ws/install
+
+Name: demo
+Description: Description of demo
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/lianchuang/catkin_ws/install/lib 
+Requires: 

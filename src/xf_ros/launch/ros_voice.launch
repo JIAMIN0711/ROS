@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="xf_ros" name="xf_ros_node" type="xf_ros_node" />
+  <node pkg="xf_ros" name="tuling_arv_node" type="tuling_arv_node"/>
+</launch>

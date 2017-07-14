@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lianchuang/catkin_ws/src/xf_ros/include/msp_cmn.h
+msp_types.h
+/home/lianchuang/catkin_ws/src/xf_ros/include/msp_types.h
+
+/home/lianchuang/catkin_ws/src/xf_ros/include/msp_errors.h
+
+/home/lianchuang/catkin_ws/src/xf_ros/include/msp_types.h
+
+/home/lianchuang/catkin_ws/src/xf_ros/include/qisr.h
+msp_types.h
+/home/lianchuang/catkin_ws/src/xf_ros/include/msp_types.h
+
+/home/lianchuang/catkin_ws/src/xf_ros/src/xf_asr.cpp
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+qisr.h
+/home/lianchuang/catkin_ws/src/xf_ros/src/qisr.h
+msp_cmn.h
+/home/lianchuang/catkin_ws/src/xf_ros/src/msp_cmn.h
+msp_errors.h
+/home/lianchuang/catkin_ws/src/xf_ros/src/msp_errors.h
+

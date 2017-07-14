@@ -1,0 +1,8 @@
+prefix=/home/lianchuang/catkin_ws/devel
+
+Name: nav_core
+Description: Description of nav_core
+Version: 1.14.0
+Cflags: -I/home/lianchuang/catkin_ws/src/navigation-kinetic-devel/nav_core/include
+Libs: -L/home/lianchuang/catkin_ws/devel/lib 
+Requires: std_msgs geometry_msgs tf costmap_2d

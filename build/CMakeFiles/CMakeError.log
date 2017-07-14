@@ -1,0 +1,171 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cd246/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cd246.dir/build.make CMakeFiles/cmTC_cd246.dir/build
+make[1]: Entering directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd246.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_cd246.dir/CheckSymbolExists.c.o   -c /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_cd246
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd246.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_cd246.dir/CheckSymbolExists.c.o  -o cmTC_cd246 -rdynamic 
+CMakeFiles/cmTC_cd246.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x16)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_cd246.dir/build.make:97: recipe for target 'cmTC_cd246' failed
+make[1]: *** [cmTC_cd246] Error 1
+make[1]: Leaving directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_cd246/fast' failed
+make: *** [cmTC_cd246/fast] Error 2
+
+File /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_18fa6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_18fa6.dir/build.make CMakeFiles/cmTC_18fa6.dir/build
+make[1]: Entering directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_18fa6.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_18fa6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_18fa6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18fa6.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_18fa6.dir/CheckFunctionExists.c.o  -o cmTC_18fa6 -rdynamic -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_18fa6.dir/build.make:97: recipe for target 'cmTC_18fa6' failed
+make[1]: *** [cmTC_18fa6] Error 1
+make[1]: Leaving directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_18fa6/fast' failed
+make: *** [cmTC_18fa6/fast] Error 2
+
+
+Determining if the include file pgm.h exists failed with the following output:
+Change Dir: /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f8d1d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f8d1d.dir/build.make CMakeFiles/cmTC_f8d1d.dir/build
+make[1]: Entering directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f8d1d.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_f8d1d.dir/CheckIncludeFile.cxx.o -c /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:17: fatal error: pgm.h: 没有那个文件或目录
+compilation terminated.
+CMakeFiles/cmTC_f8d1d.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_f8d1d.dir/CheckIncludeFile.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_f8d1d.dir/CheckIncludeFile.cxx.o] Error 1
+make[1]: Leaving directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f8d1d/fast' failed
+make: *** [cmTC_f8d1d/fast] Error 2
+
+
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_99271/fast"
+/usr/bin/make -f CMakeFiles/cmTC_99271.dir/build.make CMakeFiles/cmTC_99271.dir/build
+make[1]: Entering directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_99271.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_99271.dir/CheckSymbolExists.cxx.o -c /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^
+CMakeFiles/cmTC_99271.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_99271.dir/CheckSymbolExists.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_99271.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_99271/fast' failed
+make: *** [cmTC_99271/fast] Error 2
+
+File /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8d9cd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8d9cd.dir/build.make CMakeFiles/cmTC_8d9cd.dir/build
+make[1]: Entering directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8d9cd.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_8d9cd.dir/CheckSymbolExists.cxx.o -c /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^
+CMakeFiles/cmTC_8d9cd.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_8d9cd.dir/CheckSymbolExists.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_8d9cd.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8d9cd/fast' failed
+make: *** [cmTC_8d9cd/fast] Error 2
+
+File /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_feca1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_feca1.dir/build.make CMakeFiles/cmTC_feca1.dir/build
+make[1]: Entering directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_feca1.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_feca1.dir/CheckSymbolExists.cxx.o -c /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^
+CMakeFiles/cmTC_feca1.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_feca1.dir/CheckSymbolExists.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_feca1.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory '/home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_feca1/fast' failed
+make: *** [cmTC_feca1/fast] Error 2
+
+File /home/lianchuang/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
