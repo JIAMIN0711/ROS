@@ -1307,6 +1307,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "navigation-kinetic-devel/move_base/CMakeFiles/move_base.dir/DependInfo.cmake"
   "navigation-kinetic-devel/move_base/CMakeFiles/move_base_node.dir/DependInfo.cmake"
   "navigation-kinetic-devel/move_base/CMakeFiles/move_base_gencfg.dir/DependInfo.cmake"
+  "xf_ros/CMakeFiles/xf_record_node.dir/DependInfo.cmake"
+  "xf_ros/CMakeFiles/tuling_get_node.dir/DependInfo.cmake"
   "xf_ros/CMakeFiles/tuling_arv_node.dir/DependInfo.cmake"
   "xf_ros/CMakeFiles/xf_ros_node.dir/DependInfo.cmake"
   "xf_ros/CMakeFiles/xf_iat_node.dir/DependInfo.cmake"

@@ -56,6 +56,29 @@ CMAKE_BINARY_DIR = /home/lianchuang/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -88,17 +111,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -120,18 +132,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -164,6 +164,36 @@ preinstall/fast:
 depend:
 	cd /home/lianchuang/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+xf_ros/CMakeFiles/xf_record_node.dir/rule:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 xf_ros/CMakeFiles/xf_record_node.dir/rule
+.PHONY : xf_ros/CMakeFiles/xf_record_node.dir/rule
+
+# Convenience name for target.
+xf_record_node: xf_ros/CMakeFiles/xf_record_node.dir/rule
+
+.PHONY : xf_record_node
+
+# fast build rule for target.
+xf_record_node/fast:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_record_node.dir/build.make xf_ros/CMakeFiles/xf_record_node.dir/build
+.PHONY : xf_record_node/fast
+
+# Convenience name for target.
+xf_ros/CMakeFiles/tuling_get_node.dir/rule:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 xf_ros/CMakeFiles/tuling_get_node.dir/rule
+.PHONY : xf_ros/CMakeFiles/tuling_get_node.dir/rule
+
+# Convenience name for target.
+tuling_get_node: xf_ros/CMakeFiles/tuling_get_node.dir/rule
+
+.PHONY : tuling_get_node
+
+# fast build rule for target.
+tuling_get_node/fast:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/tuling_get_node.dir/build.make xf_ros/CMakeFiles/tuling_get_node.dir/build
+.PHONY : tuling_get_node/fast
 
 # Convenience name for target.
 xf_ros/CMakeFiles/tuling_arv_node.dir/rule:
@@ -312,6 +342,60 @@ src/tuling_arv.cpp.s:
 	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/tuling_arv_node.dir/build.make xf_ros/CMakeFiles/tuling_arv_node.dir/src/tuling_arv.cpp.s
 .PHONY : src/tuling_arv.cpp.s
 
+src/tuling_arv_get.o: src/tuling_arv_get.cpp.o
+
+.PHONY : src/tuling_arv_get.o
+
+# target to build an object file
+src/tuling_arv_get.cpp.o:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/tuling_get_node.dir/build.make xf_ros/CMakeFiles/tuling_get_node.dir/src/tuling_arv_get.cpp.o
+.PHONY : src/tuling_arv_get.cpp.o
+
+src/tuling_arv_get.i: src/tuling_arv_get.cpp.i
+
+.PHONY : src/tuling_arv_get.i
+
+# target to preprocess a source file
+src/tuling_arv_get.cpp.i:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/tuling_get_node.dir/build.make xf_ros/CMakeFiles/tuling_get_node.dir/src/tuling_arv_get.cpp.i
+.PHONY : src/tuling_arv_get.cpp.i
+
+src/tuling_arv_get.s: src/tuling_arv_get.cpp.s
+
+.PHONY : src/tuling_arv_get.s
+
+# target to generate assembly for a file
+src/tuling_arv_get.cpp.s:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/tuling_get_node.dir/build.make xf_ros/CMakeFiles/tuling_get_node.dir/src/tuling_arv_get.cpp.s
+.PHONY : src/tuling_arv_get.cpp.s
+
+src/url.o: src/url.cpp.o
+
+.PHONY : src/url.o
+
+# target to build an object file
+src/url.cpp.o:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_record_node.dir/build.make xf_ros/CMakeFiles/xf_record_node.dir/src/url.cpp.o
+.PHONY : src/url.cpp.o
+
+src/url.i: src/url.cpp.i
+
+.PHONY : src/url.i
+
+# target to preprocess a source file
+src/url.cpp.i:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_record_node.dir/build.make xf_ros/CMakeFiles/xf_record_node.dir/src/url.cpp.i
+.PHONY : src/url.cpp.i
+
+src/url.s: src/url.cpp.s
+
+.PHONY : src/url.s
+
+# target to generate assembly for a file
+src/url.cpp.s:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_record_node.dir/build.make xf_ros/CMakeFiles/xf_record_node.dir/src/url.cpp.s
+.PHONY : src/url.cpp.s
+
 src/xf_asr.o: src/xf_asr.cpp.o
 
 .PHONY : src/xf_asr.o
@@ -366,6 +450,33 @@ src/xf_iat_speech.cpp.s:
 	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_iat_node.dir/build.make xf_ros/CMakeFiles/xf_iat_node.dir/src/xf_iat_speech.cpp.s
 .PHONY : src/xf_iat_speech.cpp.s
 
+src/xf_record.o: src/xf_record.cpp.o
+
+.PHONY : src/xf_record.o
+
+# target to build an object file
+src/xf_record.cpp.o:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_record_node.dir/build.make xf_ros/CMakeFiles/xf_record_node.dir/src/xf_record.cpp.o
+.PHONY : src/xf_record.cpp.o
+
+src/xf_record.i: src/xf_record.cpp.i
+
+.PHONY : src/xf_record.i
+
+# target to preprocess a source file
+src/xf_record.cpp.i:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_record_node.dir/build.make xf_ros/CMakeFiles/xf_record_node.dir/src/xf_record.cpp.i
+.PHONY : src/xf_record.cpp.i
+
+src/xf_record.s: src/xf_record.cpp.s
+
+.PHONY : src/xf_record.s
+
+# target to generate assembly for a file
+src/xf_record.cpp.s:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_record_node.dir/build.make xf_ros/CMakeFiles/xf_record_node.dir/src/xf_record.cpp.s
+.PHONY : src/xf_record.cpp.s
+
 src/xf_tts.o: src/xf_tts.cpp.o
 
 .PHONY : src/xf_tts.o
@@ -399,17 +510,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install"
+	@echo "... rebuild_cache"
+	@echo "... xf_record_node"
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... tuling_get_node"
 	@echo "... tuling_arv_node"
-	@echo "... rebuild_cache"
 	@echo "... xf_ros_node"
 	@echo "... xf_iat_node"
-	@echo "... xf_asr_node"
 	@echo "... edit_cache"
+	@echo "... xf_asr_node"
 	@echo "... test"
-	@echo "... install"
 	@echo "... src/linuxrec.o"
 	@echo "... src/linuxrec.i"
 	@echo "... src/linuxrec.s"
@@ -419,12 +532,21 @@ help:
 	@echo "... src/tuling_arv.o"
 	@echo "... src/tuling_arv.i"
 	@echo "... src/tuling_arv.s"
+	@echo "... src/tuling_arv_get.o"
+	@echo "... src/tuling_arv_get.i"
+	@echo "... src/tuling_arv_get.s"
+	@echo "... src/url.o"
+	@echo "... src/url.i"
+	@echo "... src/url.s"
 	@echo "... src/xf_asr.o"
 	@echo "... src/xf_asr.i"
 	@echo "... src/xf_asr.s"
 	@echo "... src/xf_iat_speech.o"
 	@echo "... src/xf_iat_speech.i"
 	@echo "... src/xf_iat_speech.s"
+	@echo "... src/xf_record.o"
+	@echo "... src/xf_record.i"
+	@echo "... src/xf_record.s"
 	@echo "... src/xf_tts.o"
 	@echo "... src/xf_tts.i"
 	@echo "... src/xf_tts.s"

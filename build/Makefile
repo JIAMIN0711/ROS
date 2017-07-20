@@ -5886,6 +5886,32 @@ move_base_gencfg/fast:
 .PHONY : move_base_gencfg/fast
 
 #=============================================================================
+# Target rules for targets named xf_record_node
+
+# Build rule for target.
+xf_record_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 xf_record_node
+.PHONY : xf_record_node
+
+# fast build rule for target.
+xf_record_node/fast:
+	$(MAKE) -f xf_ros/CMakeFiles/xf_record_node.dir/build.make xf_ros/CMakeFiles/xf_record_node.dir/build
+.PHONY : xf_record_node/fast
+
+#=============================================================================
+# Target rules for targets named tuling_get_node
+
+# Build rule for target.
+tuling_get_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tuling_get_node
+.PHONY : tuling_get_node
+
+# fast build rule for target.
+tuling_get_node/fast:
+	$(MAKE) -f xf_ros/CMakeFiles/tuling_get_node.dir/build.make xf_ros/CMakeFiles/tuling_get_node.dir/build
+.PHONY : tuling_get_node/fast
+
+#=============================================================================
 # Target rules for targets named tuling_arv_node
 
 # Build rule for target.
@@ -6468,6 +6494,8 @@ help:
 	@echo "... move_base"
 	@echo "... move_base_node"
 	@echo "... move_base_gencfg"
+	@echo "... xf_record_node"
+	@echo "... tuling_get_node"
 	@echo "... tuling_arv_node"
 	@echo "... xf_ros_node"
 	@echo "... xf_iat_node"

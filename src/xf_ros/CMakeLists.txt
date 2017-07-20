@@ -217,6 +217,14 @@ target_link_libraries(
   ${catkin_LIBRARIES} -lcurl -ljsoncpp
 )
 
+add_executable(tuling_get_node
+  src/tuling_arv_get.cpp
+)
+target_link_libraries(
+  tuling_get_node
+  ${catkin_LIBRARIES} -lcurl -ljsoncpp
+)
+
 # 语音识别
 add_executable(xf_iat_node 
   src/xf_iat_speech.cpp 
@@ -227,10 +235,10 @@ target_link_libraries(
    xf_iat_node
    ${catkin_LIBRARIES}
    /home/lianchuang/catkin_ws/src/xf_ros/lib/libmsc.so -ldl -lpthread -lm -lrt -lasound
- )
+)
 
-
- add_executable(xf_asr_node 
+#  语音转文字
+add_executable(xf_asr_node 
   src/xf_asr.cpp 
   src/speech_recognizer.cpp 
   src/linuxrec.cpp
@@ -238,4 +246,14 @@ target_link_libraries(
 target_link_libraries(
    xf_asr_node
    ${catkin_LIBRARIES} -lmsc -ldl -lpthread -lm -lrt -lasound
- )
+)
+
+# 可自动选择服务器的语义理解
+add_executable(xf_record_node
+  src/xf_record.cpp
+  src/url.cpp
+)
+target_link_libraries(
+  xf_record_node
+  ${catkin_LIBRARIES} -lcurl -ljsoncpp -lmsc -ldl -lpthread -lm
+)

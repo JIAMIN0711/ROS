@@ -38,7 +38,7 @@ int parseJsonResonse(string input)
    bool parsingSuccessful = reader.parse(input, root);
    if(!parsingSuccessful)
    {
-       std::cout<<"!!! Failed to parse the response data"<< std::endl;
+       std::cout<<"Failed to parse the response data"<< std::endl;
         return -1;
    }
    const Json::Value code = root["code"];
@@ -91,22 +91,23 @@ int HttpPostRequest(string input)
             // https:// URL if that is what should receive the data.发送的api地址
             curl_easy_setopt(pCurl, CURLOPT_URL, "http://www.tuling123.com/openapi/api");
             
-            //http://192.168.1.200:5000/chat/数据
+            // curl_easy_setopt(pCurl, CURLOPT_VERBOSE, 1L);
  
-            // 设置http发送的内容类型为JSON 编码方式为UTF-8
+            // 设置http发送的内容类型为JSON 编码方式为UTF-8 (get)
             curl_slist *plist = curl_slist_append(NULL,
                 "Content-Type:application/json;charset=UTF-8");
-            curl_easy_setopt(pCurl, CURLOPT_HTTPHEADER, plist);
- 
+            curl_easy_setopt(pCurl, CURLOPT_HTTPHEADER, plist); 
+  
             // 设置要POST的JSON数据
-            curl_easy_setopt(pCurl, CURLOPT_POSTFIELDS, strJson.c_str());
+            curl_easy_setopt(pCurl, CURLOPT_POSTFIELDS, strJson.c_str());   //指定post内容（post）
  
             curl_easy_setopt(pCurl, CURLOPT_WRITEFUNCTION, writer); //缓冲区保存数据
  
-            curl_easy_setopt(pCurl, CURLOPT_WRITEDATA, &buffer); //将数据保存到buffer中
+            curl_easy_setopt(pCurl, CURLOPT_WRITEDATA, &buffer); //将数据保存到buffer中(all)
  
             // Perform the request, res will get the return code
-            res = curl_easy_perform(pCurl); //执行post请求
+            res = curl_easy_perform(pCurl); //执行请求
+
             // Check for errors
             if (res != CURLE_OK)
             {
