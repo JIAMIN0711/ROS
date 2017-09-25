@@ -111,17 +111,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -132,6 +121,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,21 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-xf_ros/CMakeFiles/xf_record_node.dir/rule:
-	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 xf_ros/CMakeFiles/xf_record_node.dir/rule
-.PHONY : xf_ros/CMakeFiles/xf_record_node.dir/rule
-
-# Convenience name for target.
-xf_record_node: xf_ros/CMakeFiles/xf_record_node.dir/rule
-
-.PHONY : xf_record_node
-
-# fast build rule for target.
-xf_record_node/fast:
-	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_record_node.dir/build.make xf_ros/CMakeFiles/xf_record_node.dir/build
-.PHONY : xf_record_node/fast
-
-# Convenience name for target.
 xf_ros/CMakeFiles/tuling_get_node.dir/rule:
 	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 xf_ros/CMakeFiles/tuling_get_node.dir/rule
 .PHONY : xf_ros/CMakeFiles/tuling_get_node.dir/rule
@@ -211,19 +196,34 @@ tuling_arv_node/fast:
 .PHONY : tuling_arv_node/fast
 
 # Convenience name for target.
-xf_ros/CMakeFiles/xf_ros_node.dir/rule:
-	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 xf_ros/CMakeFiles/xf_ros_node.dir/rule
-.PHONY : xf_ros/CMakeFiles/xf_ros_node.dir/rule
+xf_ros/CMakeFiles/xf_record_node.dir/rule:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 xf_ros/CMakeFiles/xf_record_node.dir/rule
+.PHONY : xf_ros/CMakeFiles/xf_record_node.dir/rule
 
 # Convenience name for target.
-xf_ros_node: xf_ros/CMakeFiles/xf_ros_node.dir/rule
+xf_record_node: xf_ros/CMakeFiles/xf_record_node.dir/rule
 
-.PHONY : xf_ros_node
+.PHONY : xf_record_node
 
 # fast build rule for target.
-xf_ros_node/fast:
-	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_ros_node.dir/build.make xf_ros/CMakeFiles/xf_ros_node.dir/build
-.PHONY : xf_ros_node/fast
+xf_record_node/fast:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_record_node.dir/build.make xf_ros/CMakeFiles/xf_record_node.dir/build
+.PHONY : xf_record_node/fast
+
+# Convenience name for target.
+xf_ros/CMakeFiles/xf_tts_node.dir/rule:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 xf_ros/CMakeFiles/xf_tts_node.dir/rule
+.PHONY : xf_ros/CMakeFiles/xf_tts_node.dir/rule
+
+# Convenience name for target.
+xf_tts_node: xf_ros/CMakeFiles/xf_tts_node.dir/rule
+
+.PHONY : xf_tts_node
+
+# fast build rule for target.
+xf_tts_node/fast:
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_tts_node.dir/build.make xf_ros/CMakeFiles/xf_tts_node.dir/build
+.PHONY : xf_tts_node/fast
 
 # Convenience name for target.
 xf_ros/CMakeFiles/xf_iat_node.dir/rule:
@@ -483,7 +483,7 @@ src/xf_tts.o: src/xf_tts.cpp.o
 
 # target to build an object file
 src/xf_tts.cpp.o:
-	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_ros_node.dir/build.make xf_ros/CMakeFiles/xf_ros_node.dir/src/xf_tts.cpp.o
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_tts_node.dir/build.make xf_ros/CMakeFiles/xf_tts_node.dir/src/xf_tts.cpp.o
 .PHONY : src/xf_tts.cpp.o
 
 src/xf_tts.i: src/xf_tts.cpp.i
@@ -492,7 +492,7 @@ src/xf_tts.i: src/xf_tts.cpp.i
 
 # target to preprocess a source file
 src/xf_tts.cpp.i:
-	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_ros_node.dir/build.make xf_ros/CMakeFiles/xf_ros_node.dir/src/xf_tts.cpp.i
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_tts_node.dir/build.make xf_ros/CMakeFiles/xf_tts_node.dir/src/xf_tts.cpp.i
 .PHONY : src/xf_tts.cpp.i
 
 src/xf_tts.s: src/xf_tts.cpp.s
@@ -501,7 +501,7 @@ src/xf_tts.s: src/xf_tts.cpp.s
 
 # target to generate assembly for a file
 src/xf_tts.cpp.s:
-	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_ros_node.dir/build.make xf_ros/CMakeFiles/xf_ros_node.dir/src/xf_tts.cpp.s
+	cd /home/lianchuang/catkin_ws/build && $(MAKE) -f xf_ros/CMakeFiles/xf_tts_node.dir/build.make xf_ros/CMakeFiles/xf_tts_node.dir/src/xf_tts.cpp.s
 .PHONY : src/xf_tts.cpp.s
 
 # Help Target
@@ -512,17 +512,17 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... xf_record_node"
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... tuling_get_node"
 	@echo "... tuling_arv_node"
-	@echo "... xf_ros_node"
-	@echo "... xf_iat_node"
-	@echo "... edit_cache"
-	@echo "... xf_asr_node"
+	@echo "... xf_record_node"
+	@echo "... xf_tts_node"
 	@echo "... test"
+	@echo "... xf_iat_node"
+	@echo "... xf_asr_node"
+	@echo "... edit_cache"
 	@echo "... src/linuxrec.o"
 	@echo "... src/linuxrec.i"
 	@echo "... src/linuxrec.s"

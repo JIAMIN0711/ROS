@@ -4,7 +4,6 @@
 * 高效便捷手段，非常符合信息时代海量数据、动态更新和个性化查询的需求。
 */
 
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -189,7 +188,7 @@ void toExit()
 int main(int argc, char* argv[])
 {
 	int         ret                  = MSP_SUCCESS;
-	const char* login_params         = "appid = 59634cc3, work_dir = .";//登录参数,appid与msc库绑定,请勿随意改动
+	const char* login_params         = "appid = 599d4348, work_dir = .";//登录参数,appid与msc库绑定,请勿随意改动
 	/*
 	* rdn:           合成音频数字发音方式
 	* volume:        合成音频的音量
@@ -231,4 +230,3 @@ exit:
 
 	return 0;
 }
-

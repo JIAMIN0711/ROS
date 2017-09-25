@@ -204,7 +204,7 @@ int main(int argc, char* argv[])
         if (flag){
 
 	        int ret = MSP_SUCCESS;
-    	    const char* login_params = "appid = 59634cc3, work_dir = .";
+    	    const char* login_params = "appid = 599d4348, work_dir = .";
 
 	        const char* session_begin_params =
 		        "sub = iat, domain = iat, language = zh_cn, "

@@ -2,19 +2,27 @@
 * 语音合成（Text To Speech，TTS）技术能够自动将任意文字实时转换为连续的
 * 自然语音，是一种能够在任何时间、任何地点，向任何人提供语音信息服务的
 * 高效便捷手段，非常符合信息时代海量数据、动态更新和个性化查询的需求。
+* 该语音技术是由科大迅飞提供。
 */
 
 #include <ros/ros.h>
 #include "std_msgs/String.h"
+#include "std_msgs/Int32.h"
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
+
 #include "qtts.h"
 #include "msp_cmn.h"
 #include "msp_errors.h"
+#include "ttstoasr.h"
+
+using namespace std;
+
+
 
 const char* FileName = "/home/lianchuang/catkin_ws/src/xf_ros/src/wav/voice.wav";
 const char* PlayPath = "mplayer /home/lianchuang/catkin_ws/src/xf_ros/src/wav/voice.wav";
@@ -94,6 +102,7 @@ int text_to_speech(const char* src_text, const char* des_path, const char* param
 		return ret;
 	}
 	printf("正在合成 ...\n");
+	printf("语音技术是由科大迅飞提供！\n");
 	fwrite(&wav_hdr, sizeof(wav_hdr) ,1, fp); //添加wav音频头，使用采样率为16000
 	while (1) 
 	{
@@ -142,7 +151,7 @@ int text_to_speech(const char* src_text, const char* des_path, const char* param
 int makeTextToWav(const char* text, const char* filename)
 {
 	int         ret                  = MSP_SUCCESS;
-	const char* login_params         = "appid = 59634cc3, work_dir = .";//登录参数,appid与msc库绑定,请勿随意改动
+	const char* login_params         = "appid = 599d4348, work_dir = .";//登录参数,appid与msc库绑定,请勿随意改动
 	/*
 	* rdn:           合成音频数字发音方式
 	* volume:        合成音频的音量
@@ -164,12 +173,8 @@ int makeTextToWav(const char* text, const char* filename)
 		printf("MSPLogin failed, error code: %d.\n", ret);
 		goto exit ;//登录失败，退出登录
 	}
-	// printf("\n###########################################################################\n");
-	// printf("## 语音合成（Text To Speech，TTS）技术能够自动将任意文字实时转换为连续的 ##\n");
-	// printf("## 自然语音，是一种能够在任何时间、任何地点，向任何人提供语音信息服务的  ##\n");
-	// printf("## 高效便捷手段，非常符合信息时代海量数据、动态更新和个性化查询的需求。  ##\n");
-	// printf("###########################################################################\n\n");
-	/* 文本合成 */
+
+	/* 文本合成 */ 
 	printf("开始合成 ...\n");
 	ret = text_to_speech(text, filename, session_begin_params);
 	if (MSP_SUCCESS != ret)
@@ -179,8 +184,7 @@ int makeTextToWav(const char* text, const char* filename)
 	printf("合成完毕\n");
 
 exit:
-	// printf("按任意键退出 ...\n");
-	// getchar();
+
 	MSPLogout(); //退出登录
 
 	return 0;
@@ -189,6 +193,7 @@ exit:
 void PlayWav()
 {
    system(PlayPath);
+   
 }
 
 void TTSCallback(const std_msgs::String::ConstPtr &msg)
@@ -201,14 +206,15 @@ void TTSCallback(const std_msgs::String::ConstPtr &msg)
 
 int main(int argc, char* argv[])
 {
-	const char* start = "开始启动ROS语音合成";
+const char* start = "您好，联创客服机器人正在为您服务！";
 	makeTextToWav(start, FileName);
 	PlayWav();
 
 	ros::init(argc,argv, "xf_tts_node");
 	ros::NodeHandle n;
+    
 	ros::Subscriber sub =n.subscribe("/voice/xf_tts_topic", 3 ,TTSCallback);
-
+	
 	ros::spin();
 
 	return 0;

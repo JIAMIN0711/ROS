@@ -18,7 +18,7 @@ using namespace std;
  
 int flag = 0;
 int server = 0;
-string result; //声明全局变量
+string result, number; //声明全局变量
 string question;
  
  int writer(char *data, size_t size, size_t nmemb, string *writerData)
@@ -48,7 +48,9 @@ int parseJsonResonse(string input)
 
    if(!server){
      const Json::Value answer = root["answer"];
+     const Json::Value Event = root["Event"];
      result = answer.asString(); //将返回的文本内容放到全局变量result中，在main中应用
+     number = Event.asString(); //将返回的参数内容放到全局变量number中
     //  std::cout<<"(4)result: "<< result << std::endl;
      if(result =="no"){
           
@@ -60,6 +62,7 @@ int parseJsonResonse(string input)
      else{
         flag = 1; //可以让main函数中的while函数实现if处理
         std::cout<< "response answer:" << result << std::endl;
+        // std::cout<< "response Event:" << number << std::endl;
      }
    }
    else{
@@ -86,7 +89,7 @@ int HttpGetRequest(string input)
 
     question = input;
     
-    std::string url = "http://192.168.1.200:5000/chat/";
+    std::string url = "http://192.168.1.201:5000/chat/";
     url += strTemp;
 
     // std::cout << "(3)URL: "<< url << std::endl;   
@@ -123,12 +126,14 @@ int HttpGetRequest(string input)
       
           res = curl_easy_perform(curl); //执行请求
       
-          if(res != CURLE_OK)
+          if(res != CURLE_OK){
               fprintf(stderr, "curl_easy_perform() failed:%s\n", curl_easy_strerror(res));
               result = "对不起，服务器访问错误，请检查后再使用";
+              std::cout << result << std::endl;
               flag = 1; //可以让main函数中的while函数实现if处理
+          }
+              
       
-          curl_easy_cleanup(curl); //成功后清空
 
         }
         curl_global_cleanup();  
@@ -230,7 +235,7 @@ int HttpPostRequest(string input)
 }
  
 /*
-*   当voice/tuling_arv_topic话题有消息时，调用HttpGetRequest向服务器发送内容，返回结果。
+*   当voice/xf_record_topic话题有消息时，调用HttpGetRequest向服务器发送内容，返回结果。
 */
 void arvCallBack(const std_msgs::String::ConstPtr &msg)
 {
@@ -243,8 +248,10 @@ int main(int argc, char **argv)
     ros::init(argc, argv,"xf_record_node");
     ros::NodeHandle nd;
  
-    ros::Subscriber sub = nd.subscribe("/voice/tuling_arv_topic", 10, arvCallBack); //创建订阅图灵话题
+    ros::Subscriber sub = nd.subscribe("/voice/xf_record_topic", 10, arvCallBack); //创建订阅图灵话题
     ros::Publisher pub = nd.advertise<std_msgs::String>("/voice/xf_tts_topic", 10); //发布消息的话题 xf_tts_topic
+    ros::Publisher pub1 = nd.advertise<std_msgs::String>("/voice/android_topic",10); //发布连接通话参数
+    // ros::Publisher pub2 = nd.advertise<std_msgs::Int32>("/voice/audio_goal",10); // 查找位置话题
     ros::Rate loop_rate(10); //一秒10次处理的频率
  
     while(ros::ok())
@@ -252,8 +259,12 @@ int main(int argc, char **argv)
         if(flag)
         {
             std_msgs::String msg;
+            std_msgs::String num;
             msg.data = result;
+            num.data = number;
             pub.publish(msg);
+            pub1.publish(num);
+            // pub2.publish(num);
             flag = 0;
         } //当收到的消息有内容时 即flag=1
         ros::spinOnce();

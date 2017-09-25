@@ -1,0 +1,8 @@
+prefix=/home/lianchuang/catkin_ws/install
+
+Name: tf2_web_republisher
+Description: Description of tf2_web_republisher
+Version: 0.3.1
+Cflags: -I/home/lianchuang/catkin_ws/install/include
+Libs: -L/home/lianchuang/catkin_ws/install/lib 
+Requires: tf tf2_ros geometry_msgs actionlib actionlib_msgs

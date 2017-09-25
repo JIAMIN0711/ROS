@@ -1338,6 +1338,12 @@ fake_localization_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/navigation-
 //Value Computed by CMake
 fake_localization_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/navigation-kinetic-devel/fake_localization
 
+//The directory containing a CMake configuration file for gazebo_msgs.
+gazebo_msgs_DIR:PATH=/opt/ros/kinetic/share/gazebo_msgs/cmake
+
+//The directory containing a CMake configuration file for gazebo_ros.
+gazebo_ros_DIR:PATH=/opt/ros/kinetic/share/gazebo_ros/cmake
+
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/kinetic/share/gencpp/cmake
 
@@ -1568,6 +1574,12 @@ myrobot_demo_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/myrobot_demo
 myrobot_demo_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/myrobot_demo
 
 //Value Computed by CMake
+myrobot_gazebo_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/myrobot_gazebo
+
+//Value Computed by CMake
+myrobot_gazebo_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/myrobot_gazebo
+
+//Value Computed by CMake
 nav_core_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/navigation-kinetic-devel/nav_core
 
 //The directory containing a CMake configuration file for nav_core.
@@ -1599,6 +1611,9 @@ navigation_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/navigation-kinetic-d
 
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/kinetic/share/nodelet/cmake
+
+//Dependencies for the target
+openmic_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
 
 //The directory containing a CMake configuration file for openslam_gmapping.
 openslam_gmapping_DIR:PATH=/opt/ros/kinetic/share/openslam_gmapping/cmake
@@ -1669,11 +1684,41 @@ robot_pose_ekf_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/navigation-kin
 //Value Computed by CMake
 robot_pose_ekf_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/navigation-kinetic-devel/robot_pose_ekf
 
+//Value Computed by CMake
+rosapi_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/rosbridge_suite/rosapi
+
+//The directory containing a CMake configuration file for rosapi.
+rosapi_DIR:PATH=/home/lianchuang/catkin_ws/devel/share/rosapi/cmake
+
+//Value Computed by CMake
+rosapi_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/rosbridge_suite/rosapi
+
 //The directory containing a CMake configuration file for rosbag.
 rosbag_DIR:PATH=/opt/ros/kinetic/share/rosbag/cmake
 
 //The directory containing a CMake configuration file for rosbag_storage.
 rosbag_storage_DIR:PATH=/opt/ros/kinetic/share/rosbag_storage/cmake
+
+//Value Computed by CMake
+rosbridge_library_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/rosbridge_suite/rosbridge_library
+
+//The directory containing a CMake configuration file for rosbridge_library.
+rosbridge_library_DIR:PATH=/home/lianchuang/catkin_ws/devel/share/rosbridge_library/cmake
+
+//Value Computed by CMake
+rosbridge_library_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/rosbridge_suite/rosbridge_library
+
+//Value Computed by CMake
+rosbridge_server_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/rosbridge_suite/rosbridge_server
+
+//Value Computed by CMake
+rosbridge_server_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/rosbridge_suite/rosbridge_server
+
+//Value Computed by CMake
+rosbridge_suite_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/rosbridge_suite/rosbridge_suite
+
+//Value Computed by CMake
+rosbridge_suite_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/rosbridge_suite/rosbridge_suite
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/kinetic/share/rosconsole/cmake
@@ -1756,6 +1801,12 @@ std_msgs_DIR:PATH=/opt/ros/kinetic/share/std_msgs/cmake
 //The directory containing a CMake configuration file for std_srvs.
 std_srvs_DIR:PATH=/opt/ros/kinetic/share/std_srvs/cmake
 
+//Dependencies for the target
+talker_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
+
+//Dependencies for the target
+talker_node_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;-lrt;general;-ldl;general;-lpthread;
+
 //The directory containing a CMake configuration file for tf2.
 tf2_DIR:PATH=/opt/ros/kinetic/share/tf2/cmake
 
@@ -1768,6 +1819,12 @@ tf2_py_DIR:PATH=/opt/ros/kinetic/share/tf2_py/cmake
 //The directory containing a CMake configuration file for tf2_ros.
 tf2_ros_DIR:PATH=/opt/ros/kinetic/share/tf2_ros/cmake
 
+//Value Computed by CMake
+tf2_web_republisher_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/tf2_web_republisher-develop
+
+//Value Computed by CMake
+tf2_web_republisher_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/tf2_web_republisher-develop
+
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/kinetic/share/tf/cmake
 
@@ -1776,6 +1833,9 @@ tf_conversions_DIR:PATH=/opt/ros/kinetic/share/tf_conversions/cmake
 
 //The directory containing a CMake configuration file for topic_tools.
 topic_tools_DIR:PATH=/opt/ros/kinetic/share/topic_tools/cmake
+
+//The directory containing a CMake configuration file for trajectory_msgs.
+trajectory_msgs_DIR:PATH=/opt/ros/kinetic/share/trajectory_msgs/cmake
 
 //Dependencies for the target
 trajectory_planner_ros_LIB_DEPENDS:STATIC=general;base_local_planner;
@@ -1845,6 +1905,12 @@ xf_ros_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/xf_ros
 
 //Value Computed by CMake
 xf_ros_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/xf_ros
+
+//Value Computed by CMake
+xf_ros_debug_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/xf_ros_debug
+
+//Value Computed by CMake
+xf_ros_debug_SOURCE_DIR:STATIC=/home/lianchuang/catkin_ws/src/xf_ros_debug
 
 //Value Computed by CMake
 xfei_asr_BINARY_DIR:STATIC=/home/lianchuang/catkin_ws/build/xfei_asr
@@ -2039,7 +2105,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=61
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=68
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -2806,7 +2872,7 @@ Q_WS_X11:INTERNAL=1
 SDL_IMAGE_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SDL_IMAGE_LIBRARY
 SDL_IMAGE_LIBRARY-ADVANCED:INTERNAL=1
-SDL_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDLmain.a;/usr/lib/x86_64-linux-gnu/libSDL.so;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread
+SDL_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDLmain.a;/usr/lib/x86_64-linux-gnu/libSDL.so;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread;-lpthread
 YAMLCPP_CFLAGS:INTERNAL=
 YAMLCPP_CFLAGS_I:INTERNAL=
 YAMLCPP_CFLAGS_OTHER:INTERNAL=

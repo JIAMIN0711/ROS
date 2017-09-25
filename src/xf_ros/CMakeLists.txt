@@ -201,11 +201,12 @@ include_directories(
 # catkin_add_nosetests(test)
 
 # 语音合成 
-add_executable(xf_ros_node 
+add_executable(xf_tts_node 
   src/xf_tts.cpp
 )
-target_link_libraries(xf_ros_node 
-  ${catkin_LIBRARIES} -lmsc -lrt -ldl -lpthread
+target_link_libraries(xf_tts_node 
+  ${catkin_LIBRARIES}
+  /home/lianchuang/catkin_ws/src/xf_ros/lib/libmsc.so -lrt -lpthread
 )
 
 # 图灵机器人
@@ -234,7 +235,7 @@ add_executable(xf_iat_node
 target_link_libraries(
    xf_iat_node
    ${catkin_LIBRARIES}
-   /home/lianchuang/catkin_ws/src/xf_ros/lib/libmsc.so -ldl -lpthread -lm -lrt -lasound
+   /home/lianchuang/catkin_ws/src/xf_ros/lib/libmsc.so -lpthread -lrt -lasound
 )
 
 #  语音转文字
@@ -245,7 +246,8 @@ add_executable(xf_asr_node
 )
 target_link_libraries(
    xf_asr_node
-   ${catkin_LIBRARIES} -lmsc -ldl -lpthread -lm -lrt -lasound
+   ${catkin_LIBRARIES}
+   /home/lianchuang/catkin_ws/src/xf_ros/lib/libmsc.so -lpthread -lrt -lasound
 )
 
 # 可自动选择服务器的语义理解
@@ -255,5 +257,6 @@ add_executable(xf_record_node
 )
 target_link_libraries(
   xf_record_node
-  ${catkin_LIBRARIES} -lcurl -ljsoncpp -lmsc -ldl -lpthread -lm
+  ${catkin_LIBRARIES}
+  /home/lianchuang/catkin_ws/src/xf_ros/lib/libmsc.so -lcurl -ljsoncpp -lpthread
 )

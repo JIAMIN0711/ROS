@@ -11,12 +11,13 @@
 #include<curl/curl.h>
 #include<string>
 #include<exception>
+
  
 using namespace std;
  
 int flag = 0;
-string result; //声明全局变量
- 
+string result, number; //声明全局变量
+
  int writer(char *data, size_t size, size_t nmemb, string *writerData)
 {
     unsigned long sizes = size * nmemb;
@@ -45,9 +46,10 @@ int parseJsonResonse(string input)
    const Json::Value text = root["text"];
   // const Json::Value answer = root["answer"];
    result = text.asString(); //将返回的文本内容放到全局变量result中，在main中应用
+   number = code.asString();
    flag = 1; //可以让main函数中的while函数实现if处理
  
-//    std::cout<< "response code:" << code << std::endl;
+   std::cout<< "response code:" << number << std::endl;
    std::cout<< "response text:" << result << std::endl;
  
    return 0;
@@ -151,6 +153,7 @@ int main(int argc, char **argv)
  
     ros::Subscriber sub = nd.subscribe("/voice/tuling_arv_topic", 10, arvCallBack); //创建订阅图灵话题
     ros::Publisher pub = nd.advertise<std_msgs::String>("/voice/xf_tts_topic", 10); //发布消息的话题 xf_tts_topic
+    ros::Publisher pub1 = nd.advertise<std_msgs::String>("/voice/android_topic",10);
     ros::Rate loop_rate(10); //一秒10次处理的频率
  
     while(ros::ok())
@@ -158,8 +161,11 @@ int main(int argc, char **argv)
         if(flag)
         {
             std_msgs::String msg;
+            std_msgs::String num;
+            num.data = number;
             msg.data = result;
             pub.publish(msg);
+            pub1.publish(num);
             flag = 0;
         } //当收到的消息有内容时 即flag=1
         ros::spinOnce();

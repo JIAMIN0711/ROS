@@ -1,0 +1,7 @@
+<launch>
+    <arg name="model"></arg>
+    <arg name="gui" default="False"></arg>
+    <param name="robot_description" textfile="$(arg model)"/>
+    <param name="use_gui" value="$(arg gui)"/>
+    <node ></node>
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/lianchuang/catkin_ws/devel
+
+Name: xf_ros_debug
+Description: Description of xf_ros_debug
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/lianchuang/catkin_ws/devel/lib 
+Requires: 

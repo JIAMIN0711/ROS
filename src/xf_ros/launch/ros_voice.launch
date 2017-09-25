@@ -1,6 +1,7 @@
 <launch>
-  <node pkg="xf_ros" name="xf_ros_node" type="xf_ros_node" />
+  <node pkg="xf_ros" name="xf_tts_node" type="xf_tts_node" />
   <node pkg="xf_ros" name="xf_record_node" type="xf_record_node"/>
   <node pkg="xf_ros" name="xf_asr_node" type="xf_asr_node"/>
-
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+  
 </launch>

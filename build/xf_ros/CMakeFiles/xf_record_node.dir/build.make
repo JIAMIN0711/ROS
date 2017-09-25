@@ -135,6 +135,7 @@ xf_record_node_EXTERNAL_OBJECTS =
 /home/lianchuang/catkin_ws/devel/lib/xf_ros/xf_record_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/lianchuang/catkin_ws/devel/lib/xf_ros/xf_record_node: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/lianchuang/catkin_ws/devel/lib/xf_ros/xf_record_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/lianchuang/catkin_ws/devel/lib/xf_ros/xf_record_node: /home/lianchuang/catkin_ws/src/xf_ros/lib/libmsc.so
 /home/lianchuang/catkin_ws/devel/lib/xf_ros/xf_record_node: xf_ros/CMakeFiles/xf_record_node.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lianchuang/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/lianchuang/catkin_ws/devel/lib/xf_ros/xf_record_node"
 	cd /home/lianchuang/catkin_ws/build/xf_ros && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/xf_record_node.dir/link.txt --verbose=$(VERBOSE)
